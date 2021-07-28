@@ -2,8 +2,11 @@
 using namespace std;
 
 int main() {
-    set<int> s{1, 3, 4, 5};
-    for(auto v: s) {
-        cout << v << '\n';
+    int n;
+    const int MOD = 1e6 + 3;
+    cin >> n;
+    int* mas = new int[n+1]{1,1};
+    for(int i = 2; i <= n; i++) {
+        mas[i] = (mas[i-1] + mas[i-2]) % MOD;
     }
 }
